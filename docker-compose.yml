@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    container_name: ia-medicina
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./laudo:/app/laudo
+    restart: unless-stopped
